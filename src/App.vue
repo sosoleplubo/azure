@@ -1,29 +1,21 @@
 <template>
   <div>
-    <h1>Utilisateurs test2</h1>
+    <h1>Utilisateurs</h1>
     <ul>
-      <li v-for="user in users" :key="user.id">{{ user.name }} - {{ user.email }}</li>
+      <li v-for="u in users" :key="u.Id">
+        {{ u.Nom }} – {{ u.Email }}
+      </li>
     </ul>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      users: []
-    }
-  },
-  mounted() {
-    fetch('https://backend-miniapp-sf.azurewebsites.net/api/users')
-        .then(response => response.json())
-        .then(data => {
-          this.users = data;
-        });
-  }
-}
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const users = ref([])
+
+onMounted(async () => {
+  const res  = await fetch(`${import.meta.env.VITE_API_BASE}/api/users`)
+  users.value = await res.json()
+})
 </script>
-
-<style>
-
-</style>

@@ -15,7 +15,7 @@ import { ref, onMounted } from 'vue'
 const users = ref([])
 
 onMounted(async () => {
-  const res  = await fetch(`${import.meta.env.VITE_API_BASE}/api/users`)
+  const res  = await fetch('https://backend-miniapp-sf.azurewebsites.net/api/users')
   users.value = await res.json()
 })
 </script>

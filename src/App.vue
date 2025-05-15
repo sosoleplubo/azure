@@ -15,7 +15,7 @@ export default {
     }
   },
   mounted() {
-    fetch('http://localhost:3000/api/users')
+    fetch('https://backend-miniapp-sf.azurewebsites.net/api/users')
         .then(response => response.json())
         .then(data => {
           this.users = data;

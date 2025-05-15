@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Liste des utilisateurs</title>
+    <link rel="icon" href="/favicon.ico" />
 </head>
 <body>
-<div id="app">
-    <h1>Utilisateurs</h1>
-    <ul>
-        <li v-for="user in users" :key="user.id">{{ user.name }} - {{ user.email }}</li>
-    </ul>
-</div>
+<div id="app"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/vue@3.2.45/dist/vue.global.min.js"></script>
-<script src="app.js"></script>
+<!-- Point d’entrée de votre appli : Vite le transforme au build -->
+<script type="module" src="/src/main.js"></script>
 </body>
 </html>
